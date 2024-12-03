@@ -1,5 +1,0 @@
-# Ignorar todos los directorios target
-**/target/
-
-# Incluir específicamente el archivo JAR necesario
-!target/AdministracionDevs-0.0.1.jar
