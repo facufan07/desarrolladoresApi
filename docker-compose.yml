@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app_dev:
+    build: AdministracionDevs
+    mem_limit: 512m
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://bl6c2xkc23ecylsjsp7b-mysql.services.clever-cloud.com:3306/bl6c2xkc23ecylsjsp7b?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      DB_USERNAME: uae1k3qklhbu1qxl
+      DB_PASSWORD: q0YhnVMK94Pn2Hpwhop6
+      DB_PLATFORM: org.hibernate.dialect.MySQL8Dialect
+    restart: always
+    depends_on:
+      bl6c2xkc23ecylsjsp7b:
+          condition: service_healthy
+  bl6c2xkc23ecylsjsp7b:
+    image: mysql:8.0.33 
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: q0YhnVMK94Pn2Hpwhop6
+      MYSQL_PASSWORD: q0YhnVMK94Pn2Hpwhop6
+      MYSQL_DATABASE: bl6c2xkc23ecylsjsp7b
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
