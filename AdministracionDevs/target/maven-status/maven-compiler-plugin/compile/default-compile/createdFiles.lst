@@ -1,0 +1,6 @@
+com\Facundo\AdministracionDevs\service\DesarrolladorService.class
+com\Facundo\AdministracionDevs\AdministracionDevsApplication.class
+com\Facundo\AdministracionDevs\controller\DesarrolladorController.class
+com\Facundo\AdministracionDevs\entity\Desarrollador.class
+com\Facundo\AdministracionDevs\service\IDesarrolladorService.class
+com\Facundo\AdministracionDevs\repository\IDesarrolladorRepository.class
